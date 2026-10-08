@@ -129,7 +129,7 @@ footer b{display:block;color:#fff;font-size:1.05rem}
 .must{margin-top:clamp(14px,1.8vw,24px);padding:1em 1.4em;background:var(--red);border-left:8px solid #fff;font-weight:700;font-size:1.05em}
 .t td.hit,.t td.hit .a,.t td.hit .b{color:#fff}
 /* ---- GAMIFICATION ---- */
-.fc{perspective:1000px;cursor:pointer;outline-offset:4px;-webkit-tap-highlight-color:transparent}
+.fc{display:grid;perspective:1000px;cursor:pointer;outline-offset:4px;-webkit-tap-highlight-color:transparent}
 .fin{display:grid;transform-style:preserve-3d;transition:transform .75s cubic-bezier(.2,.7,.2,1)}
 .fc.f .fin{transform:rotateY(180deg)}
 .face{grid-area:1/1;-webkit-backface-visibility:hidden;backface-visibility:hidden;padding:1.2em 1.3em 1.4em;border:1px solid var(--line);border-top:4px solid var(--red);background:linear-gradient(160deg,var(--p2),var(--p1));min-height:9.5em;display:flex;flex-direction:column;gap:.35em}
@@ -138,7 +138,9 @@ footer b{display:block;color:#fff;font-size:1.05rem}
 .face .hint{margin-top:auto;color:var(--red2);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
 .face.bk{transform:rotateY(180deg);background:linear-gradient(160deg,#e02a31,#8E1217);border-top-color:#fff}
 .face.bk p{color:#fff;font-size:1.02em}.face.bk h3{color:#fff}
-.fc:hover .fin{filter:drop-shadow(0 0 14px rgba(214,35,42,.55))}
+.fc:hover .face{box-shadow:0 0 22px rgba(214,35,42,.55)}
+.fc.f .face:not(.bk),.fc:not(.f) .face.bk{visibility:hidden;transition:visibility 0s .35s}
+.fc.f .face.bk,.fc:not(.f) .face:not(.bk){visibility:visible;transition:visibility 0s 0s}
 .rank{position:fixed;left:clamp(8px,1.2vw,22px);bottom:clamp(8px,1.2vw,22px);z-index:45;display:flex;gap:10px;align-items:center;padding:8px 14px 8px 8px;background:rgba(10,10,10,.82);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid #333;border-left:4px solid var(--red);clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,0 100%);pointer-events:none;min-width:190px}
 .rk-em{width:44px;height:44px;display:grid;place-items:center;background:var(--red);font:800 1.3rem "Bahnschrift","Arial Narrow",Arial,sans-serif;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);box-shadow:0 0 18px rgba(214,35,42,.7);transition:transform .4s}
 .rk-em.up{animation:rup 1s ease}
